@@ -93,9 +93,7 @@ Description
 How about some brand new rules? The original game has a fairly small choice of options.
 Extended versions of the game are decreasing the probability of draw, so it could be cool to play them.
 Now, your program should be able to accept alternative lists of options, like Rock, Paper, Scissors, Lizard, Spock, or even a list like this:
-At this stage, before the start of the game, the user will be able to choose the options that will be used. After entering his/her name, the user should provide a list of options separated by a comma. For example,
-
-rock,paper,scissors,lizard,spock
+At this stage, before the start of the game, the user will be able to choose the options that will be used. After entering his/her name, the user should provide a list of options separated by a comma. 
 
 If the user inputs an empty line, your program should start the game with default options: rock. paper and scissors.
 
