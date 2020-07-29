@@ -1,0 +1,83 @@
+import random
+
+
+class Game:
+    option_list = ["rock", "paper", "scissors"]
+    second_option = ["rock", "paper", "scissors", "gun", "lightning", "devil", "dragon", "water", "air", "sponge", "wolf", "tree", "human", "snake", "fire"]
+    first_list = {"scissors": "rock", 'rock': 'paper', 'paper': 'scissors'}
+    second_list = [["rock", "scissors"], ["rock", "wolf"], ["rock", "tree"], ["rock", "human"], ["rock", "snake"], ["rock", "fire"], ["rock", "sponge"], ["gun", "rock"], ["gun", "fire"], ["gun", "scissors"], ["gun", "snake"], ["gun", "human"],
+                   ["gun", "tree"], ["gun", "wolf"], ["lightning", "gun"], ["lightning", "rock"], ["lightning", "fire"], ["lightning", "scissors"], ["lightning", "snake"], ["lightning", "human"], ["devil", "lightning"], ["devil", "gun"],
+                   ["devil", "rock"], ["devil", "fire"], ["devil", "scissors"], ["devil", "snake"], ["devil", "human"],
+                   ["dragon", "devil"], ["dragon", "gun"], ["dragon", "lightning"], ["dragon", "rock"], ["dragon", "fire"], ["dragon", "snake"], ["dragon", "scissors"], ["water", "dragon"],
+                   ["water", "lightning"], ["water", "devil"], ["water", "gun"], ["water", "rock"], ["water", "fire"], ["water", "scissors"], ["water", "scissors"], ["air", "fire"], ["air", "rock"], ["air", "gun"], ["air", "lightning"],
+                   ["air", "devil"], ["air", "dragon"], ["air", "water"], ["paper", "rock"], ["paper", "gun"], ["paper", "lightning"], ["paper", "devil"], ["paper", "dragon"], ["paper", "water"], ["paper", "air"], ["sponge", "gun"],
+                   ["sponge", "lightning"], ["sponge", "devil"], ["sponge", "dragon"], ["sponge", "water"], ["sponge", "air"], ["sponge", "paper"], ["wolf", "lightning"], ["wolf", "devil"], ["wolf", "dragon"],
+                   ["wolf", "water"], ["wolf", "air"], ["wolf", "paper"], ["wolf", "sponge"], ["tree", "devil"], ["tree", "dragon"], ["tree", "water"], ["tree", "air"], ["tree", "paper"], ["tree", "spongel"],
+                   ["tree", "wolf"], ["human", "dragon"], ["human", "water"], ["human", "air"], ["human", "paper"], ["human", "sponge"], ["human", "wolf"], ["human", "tree"], ["snake", "water"], ["snake", "air"], ["snake", "paper"], ["snake", "sponge"],
+                   ["snake", "wolf"], ["snake", "tree"], ["snake", "human"], ["scissors", "air"], ["scissors", "paper"], ["scissors", "sponge"], ["scissors", "wolf"], ["scissors", "tree"], ["scissors", "human"], ["scissors", "snake"], ["fire", "paper"],
+                   ["fire", "paper"], ["fire", "sponge"], ["fire", "wolf"], ["fire", "tree"], ["fire", "snake"], ["fire", "scissors"]]
+
+    score_user = 0
+
+    def __init__(self):
+        username = input("Enter your name: ")
+        print(f"Hello, {username}")
+        file_rating = open('rating.txt', 'r+')
+        for line in file_rating:
+            line_rating = line.split(" ")
+            name_user = line_rating[0]
+            score_user = int(line_rating[1])
+            if username == name_user:
+                Game.score_user = score_user
+        file_rating.close()
+
+    @staticmethod
+    def my_game():
+        user = input()
+        print("Okay, let's start")
+        if len(user) == 0:
+            while True:
+                user_choose = input()
+                if user_choose == "!rating":
+                    print(f"Your rating: {Game.score_user}")
+                elif user_choose not in Game.first_list and user != "!rating" and user_choose != "!exit":
+                    print("Invalid input")
+                elif user_choose == "!exit":
+                    print("Bye!")
+                    break
+                elif user_choose in Game.option_list:
+                    computer = random.choice(Game.option_list)
+                    if user_choose == computer:
+                        print(f'There is a draw {user_choose}')
+                        Game.score_user += 50
+                    elif Game.first_list[user_choose] == computer:
+                        print(f'Sorry but computer chose {computer}')
+                    elif Game.first_list[computer] == user_choose:
+                        print(f'Well done. Computer chose {computer} and failed')
+                        Game.score_user += 100
+        elif len(user) != 0:
+            while True:
+                user_second = input()
+                if user_second == "!rating":
+                    print(f"Your rating: {Game.score_user}")
+                elif user_second not in Game.second_option and user_second != "!rating" and user_second != "!exit":
+                    print("Invalid input")
+                elif user_second == "!exit":
+                    print("Bye!")
+                    break
+                elif user_second in Game.second_option:
+                    computer_second = random.choice(Game.second_option)
+                    if user_second == computer_second:
+                        print(f"There is a draw ({computer_second})")
+                        Game.score_user += 50
+                    for i in Game.second_list:
+                        if i[0] == user_second and i[1] == computer_second:
+                            print(f"Well done. Computer chose {computer_second} and failed")
+                            Game.score_user += 100
+                        elif i[0] == computer_second and i[1] == user_second:
+                            print(f"Sorry, but computer chose {computer_second}")
+
+
+
+game = Game()
+game.my_game()
