@@ -1,10 +1,12 @@
 # JetBrains-Academy---python
 **My projects:**
-**1. First project:** **Zookeeper**
-**2. Second project: Coffee Machine**
-**3. Third project: Simple Chatty Bot**
-**4. Fourth project - Credit Calculator**
-**5. Fifth project: Rock-Paper-Scissors****
+
+ 1. **First project:** **Zookeeper**
+ 2. **Second project: Coffee Machine**
+ 3. **Third project: Simple Chatty Bot**
+ 4. **Fourth project - Credit Calculator**
+ 5. **Fifth project: Rock-Paper-Scissors****
+
 
 **
 ## 1. First project:** **Zookeeper**
