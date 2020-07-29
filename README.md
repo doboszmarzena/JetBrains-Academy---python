@@ -9,7 +9,7 @@
 
 
 **
-## 1. First project:** **Zookeeper**
+## 1. First project:**Zookeeper**
 
 **Description**
 It's time to make your project more convenient and understandable. In this final stage, your software will be ready for use by the zoo staff. Your program should understand the habitat numbers, show the animals, and be able to work infinitely.
