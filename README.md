@@ -5,7 +5,7 @@
  2. **Second project: Coffee Machine**
  3. **Third project: Simple Chatty Bot**
  4. **Fourth project - Credit Calculator**
- 5. **Fifth project: Rock-Paper-Scissors****
+ 5. **Fifth project: Rock-Paper-Scissors**
 
 
 **
