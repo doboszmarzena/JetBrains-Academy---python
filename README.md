@@ -44,34 +44,6 @@ The program should stop on the correct answer and print Congratulations, have a 
 Description
 Finally, let's add to our calculator the capacity to compute the differentiated payment. In such a kind of payment where the part for reducing the credit principal is constant. Another part of the payment is for interest repayment and it reduces during the credit term. It means that the payment is different each month. Let’s look at the formula:
 
-D_m = \dfrac{P}{n} + i * \left( P - \dfrac{P*(m-1)}{n} \right)D 
-m
-​	
- = 
-n
-P
-​	
- +i∗(P− 
-n
-P∗(m−1)
-​	
- )
-
-Where:
-
-D_mD 
-m
-​	
-  = mth differentiated payment;
-
-PP = the credit principal;
-
-ii = nominal interest rate. Usually, it’s 1/12 of the annual interest rate. And usually, it’s a floating value, not a percentage. For example, if we our annual interest rate = 12%, then i = 0.01.
-
-nn = Number of payments. Usually, it’s the count of months.
-
-mm = current period.
-
 As you can see, the user has to input a lot of parameters. So it might be convenient to use command-line arguments.
 
 Suppose you used to run your credit calculator via command line like this:
