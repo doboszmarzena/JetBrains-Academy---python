@@ -1,48 +1,56 @@
 import random
 import string
 
-print("H A N G M A N")
-computer_list = ('python', 'java', 'kotlin', 'javascript')
-computer = random.choice(computer_list)
-computer_choice = "-" * (len(computer))
-user_choice = []
-count = 8
 
-while True:
-    user_play = input("""Type "play" to play the game, "exit" to quit: """)
-    if user_play == "play":
-        print("")
-        while count > 0:
-            print(computer_choice)
-            user = input("Input a letter: ")
-            if user in computer_choice and user != "":
-                print("You already typed this letter")
-            elif user in computer:
-                second_list = list(computer_choice)
-                for position_letter in range(len(computer)):
-                    if computer[position_letter] == user:
-                        second_list[position_letter] = user
-                computer_choice = "".join(second_list)
-                if computer == computer_choice:
-                    print(f"You guessed the word {computer_choice}!")
-                    print("You survived!")
-                    print("")
-                    break
-            if user not in computer_choice and user in string.ascii_lowercase and len(user) == 1 and user not in user_choice:
-                count -= 1
-                print("No such letter in the word")
-                user_choice.append(user)
-                if count == 0:
-                    print("You are hanged!")
-            elif user in user_choice and user in string.ascii_lowercase:
-                    print("You already typed this letter")
-            if len(user) > 1 or len(user) == 0 or user == "":
-                    print("You should input a single letter")
-                    print("")
-                    continue
-            if user not in string.ascii_lowercase or user not in string.ascii_lowercase and len(user) > 1:
-                print("It is not an ASCII lowercase letter")
-            if count > 0:
-                print('')
-    elif user_play == "exit":
-        break
+class Hangman:
+    print("H A N G M A N")
+    computer_list = ('python', 'java', 'kotlin', 'javascript')
+    computer = random.choice(computer_list)
+    computer_choice = "-" * (len(computer))
+    user_choice = []
+    count = 8
+
+    def my_game(self):
+        while True:
+            user_play = input("""Type "play" to play the game, "exit" to quit: """)
+            if user_play == "play":
+                print("")
+                while Hangman.count > 0:
+                    print(Hangman.computer_choice)
+                    user = input("Input a letter: ")
+                    if user in Hangman.computer_choice and user != "":
+                        print("You already typed this letter")
+                    elif user in Hangman.computer:
+                        second_list = list(Hangman.computer_choice)
+                        for position_letter in range(len(Hangman.computer)):
+                            if Hangman.computer[position_letter] == user:
+                                second_list[position_letter] = user
+                        Hangman.computer_choice = "".join(second_list)
+                        if Hangman.computer == Hangman.computer_choice:
+                            print(f"You guessed the word {Hangman.computer_choice}!")
+                            print("You survived!")
+                            print("")
+                            break
+                    if user not in Hangman.computer_choice and user in string.ascii_lowercase and len(user) == 1 and user not in Hangman.user_choice:
+                        Hangman.count -= 1
+                        print("No such letter in the word")
+                        Hangman.user_choice.append(user)
+                        if Hangman.count == 0:
+                            print("You are hanged!")
+                    elif user in Hangman.user_choice and user in string.ascii_lowercase:
+                            print("You already typed this letter")
+                    if len(user) > 1 or len(user) == 0 or user == "":
+                            print("You should input a single letter")
+                            print("")
+                            continue
+                    if user not in string.ascii_lowercase or user not in string.ascii_lowercase and len(user) > 1:
+                        print("It is not an ASCII lowercase letter")
+                    if Hangman.count > 0:
+                        print('')
+            elif user_play == "exit":
+                break
+
+
+game = Hangman()
+game.my_game()
+
