@@ -78,7 +78,7 @@ The final version of your program is supposed to work from the command line and 
 python credit_calc.py --principal=1000000 --periods=60 --interest=10 Incorrect parameters    --payment, that is a monthly payment. For --type=diff the payment is different each month, so we can't calculate periods or principal,    therefore, its combination with --payment is invalid, too:
   python credit_calc.py --type=diff --principal=1000000 --interest=10 --payment=100000 Incorrect parameters    --principal is used for calculations of both types of payment. You can get its value knowing the interest, annuity payment and periods.    --periods parax
 
-## The 5. The Fifth project: Rock-Paper-Scissors
+## 5. The Fifth project: Rock-Paper-Scissors
 
 **Description**
 
