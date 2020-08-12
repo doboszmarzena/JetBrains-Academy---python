@@ -1,16 +1,15 @@
 # JetBrains-Academy---python
 **My projects:**
 
- 1. **First project:** **Zookeeper**
- 2. **Second project: Coffee Machine**
- 3. **Third project: Simple Chatty Bot**
- 4. **Fourth project - Credit Calculator**
- 5. **Fifth project: Rock-Paper-Scissors: More options**
- 6. **Sixth project: Hangman**
+ 1. **The First project:** **Zookeeper**
+ 2. **The Second project: Coffee Machine**
+ 3. **The Third project: Simple Chatty Bot**
+ 4. **The Fourth project - Credit Calculator**
+ 5. **The Fifth project: Rock-Paper-Scissors**
+ 6.   **The Sixth project: Hangman**
+ 7. **The Seventh project: Tic-Tac-Toe**
 
-
-**
-## 1. First project: **Zookeeper**
+## 1. The First project: Zookeeper
 
 **Description**
 It's time to make your project more convenient and understandable. In this final stage, your software will be ready for use by the zoo staff. Your program should understand the habitat numbers, show the animals, and be able to work infinitely.
@@ -21,7 +20,7 @@ Your program should repeat the behavior from the previous stage, now in a loop.
 Do not forget to add an exit opportunity for the program: inputting the word exit must terminate the program.
 At the end of execution, it must print See you!
 
-## 2. Second project: Coffee Machine
+## 2. The Second project: Coffee Machine
 **About**
 What can be better than a cup of coffee during a break? A coffee that you don’t have to make yourself. It’s enough to press a couple of buttons on the machine and you get a cup of energy; but first, we should teach the machine how to do it. In this project, you will work on programming a coffee machine simulator. The machine works with typical products: coffee, milk, sugar, and plastic cups; if it runs out of something, it shows a notification. You can get three types of coffee: espresso, cappuccino, and latte. Since nothing’s for free, it also collects the money.
 
@@ -37,7 +36,7 @@ The right solution to this problem is to store the current state of the machine.
 **Objective**
 Your final task is to refactor the program. Make it so that you can communicate with the coffee machine through a single method. Good luck!
 
-## 3. Third project: Simple Chatty Bot
+## 3. The Third project: Simple Chatty Bot
 
 **Description**
 At the final stage, you will improve your simple bot so that it can give you a test and check your answers. The test should be a multiple-choice quiz about programming. Your bot has to repeat the test until you answer correctly and congratulate you upon completion.
@@ -50,7 +49,7 @@ If a user enters an incorrect answer, the bot may print a message:
 *Please, try again.*
 The program should stop on the correct answer and print: *Congratulations, have a nice day*! at the end.
 
-## 4. Fourth project - Credit Calculator:
+## 4. The Fourth project - Credit Calculator:
 
 **Description**
 Finally, let's add to our calculator the capacity to compute the differentiated payment. In such a kind of payment where the part for reducing the credit principal is constant. Another part of the payment is for interest repayment and it reduces during the credit term. It means that the payment is different each month. 
@@ -79,7 +78,7 @@ The final version of your program is supposed to work from the command line and 
 python credit_calc.py --principal=1000000 --periods=60 --interest=10 Incorrect parameters    --payment, that is a monthly payment. For --type=diff the payment is different each month, so we can't calculate periods or principal,    therefore, its combination with --payment is invalid, too:
   python credit_calc.py --type=diff --principal=1000000 --interest=10 --payment=100000 Incorrect parameters    --principal is used for calculations of both types of payment. You can get its value knowing the interest, annuity payment and periods.    --periods parax
 
-## 5. Fifth project: Rock-Paper-Scissors: More options
+## The 5. The Fifth project: Rock-Paper-Scissors
 
 **Description**
 
@@ -122,10 +121,9 @@ Of course, this is not the most efficient way to determine which option prevails
 12.  For each draw, add 50 points to the score. For each user's win, add 100 to his/her score. In case the user loses, don't change the score.
 13.  If the input corresponds to anything else, output  `Invalid input`
 14.  Play the game again (with the same options that were defined before the start of the game)
- 
- 
- 
-## 6. Sixth project: Hangman
+
+
+## 6. The Sixth project: Hangman
 
 **About**
 
@@ -166,5 +164,40 @@ Improve the game by handling different error cases. Repeating a letter, entering
 
 While a dinner starts with the menu, our project ends with one. Create a menu for your game so that players can replay it or exit.
 
+## 7. The Seventh project: Tic-Tac-Toe
 
+##### About
 
+Everybody remembers this paper-and-pencil game from childhood: Tic-Tac-Toe, also known as Noughts and crosses or Xs and Os. A single mistake usually costs you the game, but thankfully it is simple enough that most players discover the best strategy quickly. Let’s program Tic-Tac-Toe and get playing!
+
+##### Learning outcomes
+
+After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, using functions, handling errors, and processing user input.
+
+**Stage 1/5: Welcome to the battlefield!**
+To start things off, the program needs to be able to print any state of the field. You’ll write a serious multi-line program using a lot of prints.
+
+**Stage 2/5: The user is the gamemaster**
+Now it’s time to analyze user input and print the state of the field depending on it. You’ll learn to address specific positions in a string to achieve the required outcome.
+
+**Stage 3/5: What's up on the field?**
+Now we’re going to write a fully-functioning multi-line program that responds to the user’s actions and analyzes the state of the field. Not only will it tell you who is winning, but it will also determine if the situation on a given field is theoretically possible!
+
+**Stage 4/5: First move!**
+Tic-tac-toe is not all about analysis – a game is meant to be played! Write a program that can change the state of the field, as your first real step toward a fully-functioning game application!
+
+**Stage 5/5: Fight!**
+Finally! Thanks to this app, you can always challenge a friend to play a quick game of Tic-Tac-Toe!:
+**Description**
+We are at the finish line! But playing alone is not so interesting, is it? Let's combine our successes in past stages and get Tic-Tac-Toe with the ability to play from the beginning (empty field) to the result (win or draw).
+Now it is time to make a working game!
+In the last stage, make it so you can play a full game with a friend. First one of you moves as X, and then the other one moves as O.
+
+**Objectives**
+In this stage, you should write a program that:
+
+1.  Prints an empty field at the beginning of the game.
+2.  Creates a game loop where the program asks the user to enter the cell coordinates, analyzes the move for correctness and shows a field with the changes if everything is ok.
+3.  Ends the game when someone wins or there is a draw.
+
+You need to output the final result after the end of the game.
