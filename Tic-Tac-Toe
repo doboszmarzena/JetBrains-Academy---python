@@ -1,0 +1,229 @@
+class TicToe:
+    player = "         "
+    game_board = player
+    game_board_first = " ".join(game_board[0:3])
+    game_board_second = " ".join(game_board[3:6])
+    game_board_third = " ".join(game_board[6:9])
+    moves = 0
+
+    print(f"---------", "\n|", game_board_first, "|", "\n|", game_board_second, "|", "\n|", game_board_third, "|", "\n---------")
+
+
+    def game_player(self):
+        while True:
+            list_number = []
+            self.choose_player = input("Enter the coordinates: ")
+            self.choose_player = list(self.choose_player)
+            self.choose_player.pop(1)
+            self.add_sign = list(TicToe.game_board)
+            player_first = "X"
+            player_second = "O"
+            self.first_sign = self.add_sign.count('X')
+            self.second_sign = self.add_sign.count('O')
+
+            if self.choose_player[0].isdigit() is True or self.choose_player[0].isdigit() is True:
+                for i in self.choose_player:
+                    list_number.append(i)
+                    list_number = list(map(int, list_number))
+                if int(list_number[0]) > 3 or int(list_number[1]) > 3:
+                        print("Coordinates should be from 1 to 3!")
+
+                if list_number[0] == 1 and list_number[1] == 1:
+                        if self.add_sign[6] != " ":
+                            del list_number
+                            print("This cell is occupied! Choose another one!")
+                        elif self.add_sign[6] == " ":
+                                TicToe.moves += 1
+                                self.add_sign.pop(6)
+                                if TicToe.moves % 2 != 0:
+                                    self.add_sign.insert(6, player_first)
+                                if TicToe.moves % 2 == 0:
+                                    self.add_sign.insert(6, player_second)
+                                TicToe.game_board = self.add_sign
+                                TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|", TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|", "\n---------")
+
+                elif list_number[0] == 2 and list_number[1] == 1:
+                            if self.add_sign[7] != " ":
+                                del list_number
+                                print("This cell is occupied! Choose another one!")
+                            elif self.add_sign[7] == " ":
+                                TicToe.moves += 1
+                                self.add_sign.pop(7)
+                                if TicToe.moves % 2 != 0:
+                                    self.add_sign.insert(7, player_first)
+                                if TicToe.moves % 2 == 0:
+                                    self.add_sign.insert(7, player_second)
+                                TicToe.game_board = self.add_sign
+                                TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|", TicToe.game_board_second, "|", "\n|",
+                                          TicToe.game_board_third, "|", "\n---------")
+
+                elif list_number[0] == 3 and list_number[1] == 1:
+                            if self.add_sign[8] != " ":
+                                del list_number
+                                print("This cell is occupied! Choose another one!")
+                            elif self.add_sign[8] == " ":
+                                TicToe.moves += 1
+                                self.add_sign.pop(8)
+                                if TicToe.moves % 2 != 0:
+                                    self.add_sign.insert(8, player_first)
+                                if TicToe.moves % 2 == 0:
+                                    self.add_sign.insert(8, player_second)
+                                TicToe.game_board = self.add_sign
+                                TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                      TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|", "\n---------")
+
+
+                elif list_number[0] == 1 and list_number[1] == 2:
+                            if self.add_sign[3] != " ":
+                                del list_number
+                                print("This cell is occupied! Choose another one!")
+                            elif self.add_sign[3] == " ":
+                                TicToe.moves += 1
+                                self.add_sign.pop(3)
+                                if TicToe.moves % 2 != 0:
+                                    self.add_sign.insert(3, player_first)
+                                if TicToe.moves % 2 == 0:
+                                    self.add_sign.insert(3, player_second)
+                                TicToe.game_board = self.add_sign
+                                TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                      TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|", "\n---------")
+
+                elif list_number[0] == 2 and list_number[1] == 2:
+                                if self.add_sign[4] != " ":
+                                    del list_number
+                                    print("This cell is occupied! Choose another one!")
+                                elif self.add_sign[4] == " ":
+                                    TicToe.moves += 1
+                                    self.add_sign.pop(4)
+                                    if TicToe.moves % 2 != 0:
+                                        self.add_sign.insert(4, player_first)
+                                    if TicToe.moves % 2 == 0:
+                                        self.add_sign.insert(4, player_second)
+                                    TicToe.game_board = self.add_sign
+                                    TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                    TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                    TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                    print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                          TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|",
+                                          "\n---------")
+
+                elif list_number[0] == 3 and list_number[1] == 2:
+                                if self.add_sign[5] != " ":
+                                    del list_number
+                                    print("This cell is occupied! Choose another one!")
+                                elif self.add_sign[5] == " ":
+                                    TicToe.moves += 1
+                                    self.add_sign.pop(5)
+                                    if TicToe.moves % 2 != 0:
+                                        self.add_sign.insert(5, player_first)
+                                    if TicToe.moves % 2 == 0:
+                                        self.add_sign.insert(5, player_second)
+                                    TicToe.game_board = self.add_sign
+                                    TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                    TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                    TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                    print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                          TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|",
+                                          "\n---------")
+                elif list_number[0] == 1 and list_number[1] == 3:
+                            if self.add_sign[0] != " ":
+                                del list_number
+                                print("This cell is occupied! Choose another one!")
+                            elif self.add_sign[0] == " ":
+                                TicToe.moves += 1
+                                self.add_sign.pop(0)
+                                if TicToe.moves % 2 != 0:
+                                    self.add_sign.insert(0, player_first)
+                                if TicToe.moves % 2 == 0:
+                                    self.add_sign.insert(0, player_second)
+                                TicToe.game_board = self.add_sign
+                                TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                      TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|", "\n---------")
+                elif list_number[0] == 2 and list_number[1] == 3:
+                                if self.add_sign[1] != " ":
+                                    del list_number
+                                    print("This cell is occupied! Choose another one!")
+                                elif self.add_sign[1] == " ":
+                                    TicToe.moves += 1
+                                    self.add_sign.pop(1)
+                                    if TicToe.moves % 2 != 0:
+                                        self.add_sign.insert(1, player_first)
+                                    if TicToe.moves % 2 == 0:
+                                        self.add_sign.insert(1, player_second)
+                                    TicToe.game_board = self.add_sign
+                                    TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                    TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                    TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                    print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                          TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|",
+                                          "\n---------")
+                elif list_number[0] == 3 and list_number[1] == 3:
+                                if self.add_sign[2] != " ":
+                                    del list_number
+                                    print("This cell is occupied! Choose another one!")
+                                elif self.add_sign[2] == " ":
+                                    TicToe.moves += 1
+                                    self.add_sign.pop(2)
+                                    if TicToe.moves % 2 != 0:
+                                        self.add_sign.insert(2, player_first)
+                                    if TicToe.moves % 2 == 0:
+                                        self.add_sign.insert(2, player_second)
+                                    TicToe.game_board = self.add_sign
+                                    TicToe.game_board_first = " ".join(TicToe.game_board[0:3])
+                                    TicToe.game_board_second = " ".join(TicToe.game_board[3:6])
+                                    TicToe.game_board_third = " ".join(TicToe.game_board[6:9])
+                                    print(f"---------", "\n|", TicToe.game_board_first, "|", "\n|",
+                                          TicToe.game_board_second, "|", "\n|", TicToe.game_board_third, "|",
+                                          "\n---------")
+
+            if self.choose_player[0].isdigit() is False or self.choose_player[0].isdigit() is False:
+                    print("You should enter numbers!")
+
+            if board_game(self.add_sign, 'X') and not board_game(self.add_sign, 'O'):
+                    print("X wins")
+                    break
+            elif board_game(self.add_sign, 'O') and not board_game(self.add_sign, 'X'):
+                    print("O wins")
+                    break
+            elif TicToe.moves == 9 and not board_game(self.add_sign, 'X') and not board_game(self.add_sign, 'O'):
+                    print("Draw")
+
+
+
+
+
+def board_game(player, sign ):
+    return ((player[0] == sign and player[1] == sign and player[2] == sign) or
+
+            (player[3] == sign and player[4] == sign and player[5] == sign) or
+
+            (player[6] == sign and player[7] == sign and player[8] == sign) or
+
+            (player[0] == sign and player[3] == sign and player[6] == sign) or
+
+            (player[1] == sign and player[4] == sign and player[7] == sign) or
+
+            (player[2] == sign and player[5] == sign and player[8] == sign) or
+
+            (player[0] == sign and player[4] == sign and player[8] == sign) or
+
+            (player[2] == sign and player[4] == sign and player[6] == sign))
+
+
+game = TicToe()
+game.game_player()
