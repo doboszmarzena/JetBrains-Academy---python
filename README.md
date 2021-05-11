@@ -8,7 +8,7 @@
  5. **The Fifth project: Rock-Paper-Scissors**
  6.   **The Sixth project: Hangman**
  7. **The Seventh project: Tic-Tac-Toe**
- 8.  **Dominoes**
+ 8.  **The Eight project: Dominoes**
 
 ## 1. The First project: Zookeeper
 
