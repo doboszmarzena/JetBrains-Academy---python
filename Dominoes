@@ -1,0 +1,339 @@
+import random
+
+
+class Domino:
+    dominoes_pieces = [[a, b] for b in range(7) for a in range(7) if a <= b]
+
+
+    def __init__(self):
+        self.stock = None
+        self.computer = None
+        self.player = None
+        self.status = None
+        self.max_double = None
+        self.list_user = None
+        self.list_all = []
+        self.list_computer = None
+        self.user = None
+
+
+
+    def game_pieces(self):
+            random.shuffle(Domino.dominoes_pieces)
+            self.stock = Domino.dominoes_pieces[0:14]
+            self.computer = Domino.dominoes_pieces[15:21]
+            self.player = Domino.dominoes_pieces[21:28]
+
+            self.max_double = max(max(self.computer), max(self.player))
+            self.list_all.append(self.max_double)
+            self.choose_game()
+
+
+
+
+    def choose_game(self):
+        print("=" * 70)
+        print(f"Stock size: {len(self.stock)}")
+        print(f"Computer pieces: {len(self.computer)}")
+        if len(self.list_all) <= 6:
+            for i in self.list_all:
+                print(i, end=' ')
+            print()
+        else:
+            print(*self.list_all[0:3], '...', *self.list_all[-3:], sep='')
+
+        if len(self.player) > 6:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n"
+                  f"3: {self.player[2]} \n"
+                  f"4: {self.player[3]} \n"
+                  f"5: {self.player[4]} \n"
+                  f"6: {self.player[5]} \n"
+                  f"7: {self.player[6]}")
+        elif len(self.player) > 5:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n"
+                  f"3: {self.player[2]} \n"
+                  f"4: {self.player[3]} \n"
+                  f"5: {self.player[4]} \n"
+                  f"6: {self.player[5]} \n")
+        elif len(self.player) > 4:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n"
+                  f"3: {self.player[2]} \n"
+                  f"4: {self.player[3]} \n"
+                  f"5: {self.player[4]} \n")
+        elif len(self.player) > 3:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n"
+                  f"3: {self.player[2]} \n"
+                  f"4: {self.player[3]} \n")
+        elif len(self.player) > 2:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n"
+                  f"3: {self.player[2]} \n")
+        elif len(self.player) > 1:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n"
+                  f"2: {self.player[1]} \n")
+        elif len(self.player) > 0:
+            print(f"\nYour pieces: \n"
+                  f"1: {self.player[0]} \n")
+        self.game_over()
+
+        if len(self.list_all) % 2 != 0:
+            print("Status: It's your turn to make a move. Enter your command.")
+            self.user = input()
+            if self.user == "0":
+                            print("=" * 70)
+                            print(f"Stock size: {len(self.stock)}")
+                            print(f"Computer pieces: {len(self.computer)}")
+                            if len(self.list_all) <= 6:
+                                for i in self.list_all:
+                                    print(i, end=' ')
+                                print()
+                            else:
+                                print(*self.list_all[0:3], '...', *self.list_all[-3:], sep='')
+
+                            if len(self.player) > 6:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n"
+                                      f"3: {self.player[2]} \n"
+                                      f"4: {self.player[3]} \n"
+                                      f"5: {self.player[4]} \n"
+                                      f"6: {self.player[5]} \n"
+                                      f"7: {self.player[6]}")
+                            elif len(self.player) > 5:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n"
+                                      f"3: {self.player[2]} \n"
+                                      f"4: {self.player[3]} \n"
+                                      f"5: {self.player[4]} \n"
+                                      f"6: {self.player[5]} \n")
+                            elif len(self.player) > 4:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n"
+                                      f"3: {self.player[2]} \n"
+                                      f"4: {self.player[3]} \n"
+                                      f"5: {self.player[4]} \n")
+                            elif len(self.player) > 3:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n"
+                                      f"3: {self.player[2]} \n"
+                                      f"4: {self.player[3]} \n")
+                            elif len(self.player) > 2:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n"
+                                      f"3: {self.player[2]} \n")
+                            elif len(self.player) > 1:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n"
+                                      f"2: {self.player[1]} \n")
+                            elif len(self.player) > 0:
+                                print(f"\nYour pieces: \n"
+                                      f"1: {self.player[0]} \n")
+
+                            print(input("Status: Computer is about to make a move. Press Enter to continue..."))
+                            self.list_computer = random.choices(self.computer, k=1)
+                            for i in self.list_computer:
+                                    self.list_all.append(i)
+                                    self.list_computer.remove(i)
+                                    self.computer.remove(i)
+                                    self.choose_game()
+
+            if self.user == "1":
+                                    self.list_user = self.player[0]
+                                    i = [self.list_all[i][i] for i in (-1, )]
+                                    if self.list_user[0] == i[0]:
+                                            self.list_all.append(self.list_user)
+                                            del self.player[0]
+                                    elif self.list_user[1] == i[0]:
+                                                self.list_user = [self.list_user[1], self.list_user[0]]
+                                                self.list_all.append(self.list_user)
+                                                del self.player[0]
+                                                self.choose_game()
+                                    else:
+                                                print("Illegal move. Please try again.")
+                                                self.user = input()
+
+            elif self.user == "-1":
+                                    self.list_user = self.player[0]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[0]
+                                    self.choose_game()
+
+            elif self.user == "2":
+                                    self.list_user = self.player[1]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[1]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        self.list_all.append(self.list_user)
+                                        del self.player[1]
+                                        self.choose_game()
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-2":
+                                    self.list_user = self.player[1]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[1]
+                                    self.choose_game()
+
+            elif self.user == "3":
+                                    self.list_user = self.player[2]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[2]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        print(self.list_user)
+                                        self.list_all.append(self.list_user)
+                                        del self.player[2]
+                                        self.choose_game()
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-3":
+                                    self.list_user = self.player[2]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[2]
+                                    self.choose_game()
+
+            elif self.user == "4":
+                                    self.list_user = self.player[3]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[3]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        self.list_all.append(self.list_user)
+                                        del self.player[3]
+                                        self.choose_game()
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-4":
+                                    self.list_user = self.player[3]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[3]
+                                    self.choose_game()
+
+            elif self.user == "5":
+                                    self.list_user = self.player[4]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[4]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        print(self.list_user)
+                                        self.list_all.append(self.list_user)
+                                        del self.player[4]
+                                        self.choose_game()
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-5":
+                                    self.list_user = self.player[4]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[4]
+                                    self.choose_game()
+
+            elif self.user == "6":
+                                    self.list_user = self.player[5]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[5]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        print(self.list_user)
+                                        self.list_all.append(self.list_user)
+                                        del self.player[5]
+                                        self.choose_game()
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-6":
+                                    self.list_user = self.player[5]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[5]
+                                    self.choose_game()
+
+            elif self.user == "7":
+                                    self.list_user = self.player[6]
+                                    i = [self.list_all[i][i] for i in (-1,)]
+                                    if self.list_user[0] == i[0]:
+                                        self.list_all.append(self.list_user)
+                                        del self.player[6]
+                                        self.choose_game()
+                                    elif self.list_user[1] == i[0]:
+                                        self.list_user = [self.list_user[1], self.list_user[0]]
+                                        print(self.list_user)
+                                        self.list_all.append(self.list_user)
+                                        del self.player[6]
+                                        self.choose_game()
+
+                                    else:
+                                            print("Illegal move. Please try again.")
+                                            self.user = input()
+
+            elif self.user == "-7":
+                                    self.list_user = self.player[6]
+                                    self.list_all.insert(0, self.list_user)
+                                    del self.player[6]
+                                    self.choose_game()
+
+        else:
+                        print(input("Status: Computer is about to make a move. Press Enter to continue..."))
+                        self.list_computer = random.choices(self.computer, k=1)
+                        for i in self.list_computer:
+                                self.list_all.append(i)
+                                self.list_computer.remove(i)
+                                self.computer.remove(i)
+                                self.choose_game()
+
+    def game_over(self):
+        if len(self.player) == 0:
+            print("Status: The game is over. You won!")
+            exit()
+        elif len(self.computer) == 0:
+            print("Status: The game is over. The computer won!")
+            exit()
+        elif self.list_all[0] == self.list_all[-1] and self.list_all.count(self.list_all[0]) == 8:
+            print("Status: The game is over. It's a draw!")
+            exit()
+
+
+
+
+
+
+
+p1 = Domino()
+p1.game_pieces()
