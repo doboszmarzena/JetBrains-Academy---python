@@ -8,6 +8,7 @@
  5. **The Fifth project: Rock-Paper-Scissors**
  6.   **The Sixth project: Hangman**
  7. **The Seventh project: Tic-Tac-Toe**
+ 8.  **Dominoes**
 
 ## 1. The First project: Zookeeper
 
@@ -201,3 +202,13 @@ In this stage, you should write a program that:
 3.  Ends the game when someone wins or there is a draw.
 
 You need to output the final result after the end of the game.
+
+## 7. The Eight project: Dominoes
+
+##### About
+Have you ever wanted to code a game where the computer is your enemy? Well, this little project allows you to do just that.
+Take turns playing classic dominoes against your computer in a race to victory.
+Learn, how artificial intelligence can make use of simple statistics to make educated decisions. This project is all about basic concepts, put them to practice by making a fun little game.
+
+##### Learning outcomes
+This project is all about basic concepts. You'll work with strings, tuples, lists, conditional statements, and more.
