@@ -9,6 +9,7 @@
  6.   **The Sixth project: Hangman**
  7. **The Seventh project: Tic-Tac-Toe**
  8.  **The Eight project: Dominoes**
+ 9.  **The Ninth project: Currency Converter**
 
 ## 1. The First project: Zookeeper
 
@@ -203,7 +204,7 @@ In this stage, you should write a program that:
 
 You need to output the final result after the end of the game.
 
-## 7. The Eight project: Dominoes
+## 8. The Eight project: Dominoes
 
 ##### About
 Have you ever wanted to code a game where the computer is your enemy? Well, this little project allows you to do just that.
@@ -212,3 +213,20 @@ Learn, how artificial intelligence can make use of simple statistics to make edu
 
 ##### Learning outcomes
 This project is all about basic concepts. You'll work with strings, tuples, lists, conditional statements, and more.
+ 
+
+ ## 9. The Ninth project: Currency Converter
+
+##### About
+Want to convert one currency to another? You can go to your bank website and do the math by yourself. Or you can write a program to do it quickly and efficiently! The Currency Converter is a simple console program that calculates the amount of money you get by converting one currency to another.
+
+##### Learning outcomes
+You will learn many concepts of Python — basic types, variables, arithmetic operations, loops, and working with files. Get a taste of more advanced features — JSON format, caching, and how to work with the network. You will write a currency converter program that uses a third-party service.
+ 
+**What you’ll do and what you’ll learn**
+**Stage 1/6 Write a simple program that greets a new type of cryptocurrency.**
+ **Stage 2/6 All of a sudden you have found a stash of crypto tokens. Write a program that calculates the number of dollars received from their sale.**
+**Stage 3/6 Read the number of conicoins, exchange rate, and a currency code as the user input. Calculate what you will receive.**
+**Stage 4/6 Find out how much you get in five other currencies after selling your conicoins.**
+**Stage 5/6 Print the actual exchange rates for USD and EUR using a 3rd party service.**
+**Stage 6/6 Pick two currencies and find their actual exchange rates. Learn how to use cache to store the information about hundreds of currencies.**
