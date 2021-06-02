@@ -10,6 +10,7 @@
  7. **The Seventh project: Tic-Tac-Toe**
  8.  **The Eight project: Dominoes**
  9.  **The Ninth project: Currency Converter**
+ 10. **The Tenth project: Arithmetic Exam Application**
 
 ## 1. The First project: Zookeeper
 
@@ -230,3 +231,17 @@ You will learn many concepts of Python — basic types, variables, arithmetic op
 **Stage 4/6 Find out how much you get in five other currencies after selling your conicoins.**
 **Stage 5/6 Print the actual exchange rates for USD and EUR using a 3rd party service.**
 **Stage 6/6 Pick two currencies and find their actual exchange rates. Learn how to use cache to store the information about hundreds of currencies.**
+ 
+  ## 10. The Tenth Project: Arithmetic Exam Application
+
+##### About
+Many people are fond of interactive learning. In this project, you will learn how to write an application that can facilitate solving arithmetic operations in a quick manner. The application will generate a mathematical expression for a user to solve. Implement various levels of difficulty and let the application save the results and show the progress of learning.
+
+##### Learning outcomes
+Learn how to handle input and output, employ the random number generator, and write the output to a file.
+ 
+**What you’ll do and what you’ll learn**
+**Stage 1/6 Write a mini calculator to work with numbers and simple mathematical operations..**
+ **Stage 2/6 Use the random number generator to make your tasks random.**
+**Stage 3/6 Test with one question is boring, let's add more questions! Also, we need to find a way to handle user typos..**
+**Stage 4/6 Solving mathematical expressions is helpful, but many students prefer to get marks. Let's add marks and save the results!.**
