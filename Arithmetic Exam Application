@@ -1,0 +1,126 @@
+import random
+import os.path
+
+
+class Calculator:
+    count = 0
+    task_count = 0
+
+    def __init__(self):
+        self.a = None
+        self.b = None
+        self.c = None
+        self.user = None
+        self.task = None
+        self.task_square = None
+        self.name_user = None
+        self.user_name = None
+
+    def ask_user(self):
+        print("""Which level do you want? Enter a number:
+1 - simple operations with numbers 2-9
+2 - integral squares of 11-29""")
+        try:
+            self.user_ask = int(input())
+            if self.user_ask == 1:
+                self.task_calculate()
+                self.try_user()
+            elif self.user_ask == 2:
+                self.task_squares()
+                self.try_user()
+            elif self.user_ask > 2 or self.user_ask < 1:
+                print("Incorrect format.")
+            self.ask_user()
+        except ValueError:
+            print("Incorrect format.")
+            self.ask_user()
+
+    def task_calculate(self):
+        while True:
+            if Calculator.task_count < 5:
+                Calculator.task_count += 1
+                self.a = random.randint(2, 9)
+                self.b = random.randint(2, 9)
+                self.c = random.choice(r"+-*")
+                print(self.a, self.c, self.b)
+                self.task = eval(str(self.a) + self.c + str(self.b))
+                self.try_user()
+            elif Calculator.task_count == 5:
+                print(f"Your mark is {Calculator.count}/5. Would you like to save the result? Enter yes or no. ")
+                self.name_ask = input()
+                if self.name_ask == "yes" or self.name_ask == "YES" or self.name_ask == "y" or self.name_ask == "Yes":
+                    print("What is your name? ")
+                    self.user_name = input()
+                    if os.path.isfile('results.txt'):
+                        with open('results.txt', 'a') as f:
+                            f.write(str(self.user_name) + ": " + str(
+                                Calculator.count) + "/5 in level 1 (simple operations with numbers 2-9).")
+                            print('The results are saved in "results.txt".')
+                            f.close()
+                            exit()
+                    else:
+                        name_file = open("results.txt", 'a+')
+                        name_file.write(str(self.user_name) + ": " + str(
+                            Calculator.count) + "/5 in level 1 (simple operations with numbers 2-9).")
+                        print('The results are saved in "results.txt".')
+                        name_file.close()
+                        exit()
+
+                elif self.name_user == "no" or self.name_ask != "YES" or self.name_ask != "y" or self.name_ask != "Yes":
+                    exit()
+
+    def task_squares(self):
+        while True:
+            if Calculator.task_count < 5:
+                Calculator.task_count += 1
+                self.a = random.randint(11, 29)
+                print(self.a)
+                self.task_square = self.a ** 2
+                self.try_user()
+            elif Calculator.task_count == 5:
+                print(f"Your mark is {Calculator.count}/5. Would you like to save the result? Enter yes or no.")
+                self.name_ask = input()
+                if self.name_ask == "yes" or self.name_ask == "YES" or self.name_ask == "y" or self.name_ask == "Yes":
+                    print("What is your name? ")
+                    self.user_name = input()
+                    if os.path.isfile('results.txt'):
+                        with open('results.txt', 'a+') as self.f:
+                            self.f.write(str(self.user_name) + ": " + str(
+                                Calculator.count) + "/5 in level 2 (integral squares of 11-29).")
+                            print('The results are saved in "results.txt".')
+
+                    else:
+                        self.name_file = open("results.txt", 'w', encoding='utf-8')
+                        self.name_file.write(str(self.user_name) + ": " + str(
+                            Calculator.count) + "/5 in level 2 (integral squares of 11-29).")
+                        print('The results are saved in "results.txt".')
+                    self.f.close()
+
+                elif self.name_user == "no" or self.name_ask != "YES" or self.name_ask != "y" or self.name_ask != "Yes":
+                    exit()
+
+    def try_user(self):
+        try:
+            self.user = input()
+            if int(self.user) == self.task and self.user_ask == 1:
+                print("Right!")
+                Calculator.count += 1
+                self.task_calculate()
+            elif int(self.user) == self.task_square and self.user_ask == 2:
+                print("Right!")
+                Calculator.count += 1
+                self.task_squares()
+            elif int(self.user) != self.task and self.user_ask == 1:
+                print("Wrong!")
+                self.task_calculate()
+            elif int(self.user) != self.task_square and self.user_ask == 2:
+                print("Wrong!")
+                self.task_squares()
+        except ValueError:
+            print("Incorrect format.")
+            self.try_user()
+
+
+p = Calculator()
+p.ask_user()
+p.task_calculate()
