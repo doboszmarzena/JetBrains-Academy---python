@@ -1,0 +1,64 @@
+class GameGenerate:
+    print("""Please give AI some data to learn...
+The current data length is 0, 100 symbols left""")
+
+    def __init__(self):
+        self.number_dict = ''
+        self.main_dict = {"000": [0, 0], "001": [0, 0], "010": [0, 0], "011": [0, 0],
+                        "100": [0, 0], "101": [0, 0], "110": [0, 0], "111": [0, 0]}
+
+    def string_number(self):
+        data = input('Print a random string containing 0 or 1:\n\n')
+        for x in data:
+            if x == '0' or x == '1':
+                self.number_dict += x
+        if len(self.number_dict) < 100:
+            print(f"The current data length is {len(self.number_dict)}, {100 - len(self.number_dict)} symbols left")
+            self.string_number()
+        else:
+            self.generate_number()
+
+    def generate_number(self):
+        for y in range(len(self.number_dict) - 3):
+            if self.number_dict[y + 3] == "0":
+                self.main_dict[self.number_dict[y:y + 3]][0] += 1
+            elif self.number_dict[y + 3] == "1":
+                self.main_dict[self.number_dict[y:y + 3]][1] += 1
+        print(f"\nFinal data string:\n{self.number_dict}\n")
+        print()
+        print("""You have $1000. Every time the system successfully predicts your next press, you lose $1.
+Otherwise, you earn $1. Print "enough" to leave the game. Let's go!""")
+        self.prediction()
+
+    def prediction(self):
+        print()
+        capital = 1000
+        while True:
+            user = input("Print a random string containing 0 or 1:\n\n")
+            if user.lower() == "enough":
+                print("Game over!")
+                exit()
+
+            for i in user.split():
+                if i[0] == "0" or i[0] == "1":
+                        prediction = user[:3]
+                        all_number = len(user) - 3
+                        for number in range(all_number):
+                            triad = user[number:number + 3]
+                            prediction += '0' if self.main_dict[triad][0] >= self.main_dict[triad][1] else '1'
+                        correct = 0
+                        for x in range(all_number):
+                            if prediction[x] == user[x]:
+                                correct += 1
+                                capital -= 1
+                            elif prediction[x] != user[x]:
+                                capital += 1
+                        correct_num = round(correct / all_number * 100, 2)
+                        print(f"prediction:\n{prediction}\n")
+                        print(f"Computer guessed right {correct} out of {all_number} symbols ({correct_num})%")
+                        print(f"Your capital is now ${capital}")
+
+
+
+if __name__ == '__main__':
+    GameGenerate().string_number()
