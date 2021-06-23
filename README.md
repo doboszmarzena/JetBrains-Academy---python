@@ -1,18 +1,19 @@
 # JetBrains-Academy---python
 **My projects:**
 
- 1. **The First project:** **Zookeeper**
- 2. **The Second project: Coffee Machine**
- 3. **The Third project: Simple Chatty Bot**
- 4. **The Fourth project - Credit Calculator**
- 5. **The Fifth project: Rock-Paper-Scissors**
- 6.   **The Sixth project: Hangman**
- 7. **The Seventh project: Tic-Tac-Toe**
- 8.  **The Eight project: Dominoes**
- 9.  **The Ninth project: Currency Converter**
- 10. **The Tenth project: Arithmetic Exam Application**
+ 1. **Zookeeper**
+ 2. **Coffee Machine**
+ 3. **Simple Chatty Bot**
+ 4. **Credit Calculator**
+ 5. **Rock-Paper-Scissors**
+ 6. **Hangman**
+ 7. **Tic-Tac-Toe**
+ 8. **Dominoes**
+ 9. **Currency Converter**
+ 10. **Arithmetic Exam Application**
+ 11. **Generating Randomnes**
 
-## 1. The First project: Zookeeper
+## 1. Zookeeper
 
 **Description**
 It's time to make your project more convenient and understandable. In this final stage, your software will be ready for use by the zoo staff. Your program should understand the habitat numbers, show the animals, and be able to work infinitely.
@@ -23,7 +24,7 @@ Your program should repeat the behavior from the previous stage, now in a loop.
 Do not forget to add an exit opportunity for the program: inputting the word exit must terminate the program.
 At the end of execution, it must print See you!
 
-## 2. The Second project: Coffee Machine
+## 2. Coffee Machine
 **About**
 What can be better than a cup of coffee during a break? A coffee that you don’t have to make yourself. It’s enough to press a couple of buttons on the machine and you get a cup of energy; but first, we should teach the machine how to do it. In this project, you will work on programming a coffee machine simulator. The machine works with typical products: coffee, milk, sugar, and plastic cups; if it runs out of something, it shows a notification. You can get three types of coffee: espresso, cappuccino, and latte. Since nothing’s for free, it also collects the money.
 
@@ -39,7 +40,7 @@ The right solution to this problem is to store the current state of the machine.
 **Objective**
 Your final task is to refactor the program. Make it so that you can communicate with the coffee machine through a single method. Good luck!
 
-## 3. The Third project: Simple Chatty Bot
+## 3. Simple Chatty Bot
 
 **Description**
 At the final stage, you will improve your simple bot so that it can give you a test and check your answers. The test should be a multiple-choice quiz about programming. Your bot has to repeat the test until you answer correctly and congratulate you upon completion.
@@ -52,7 +53,7 @@ If a user enters an incorrect answer, the bot may print a message:
 *Please, try again.*
 The program should stop on the correct answer and print: *Congratulations, have a nice day*! at the end.
 
-## 4. The Fourth project - Credit Calculator:
+## 4. Credit Calculator:
 
 **Description**
 Finally, let's add to our calculator the capacity to compute the differentiated payment. In such a kind of payment where the part for reducing the credit principal is constant. Another part of the payment is for interest repayment and it reduces during the credit term. It means that the payment is different each month. 
@@ -81,7 +82,7 @@ The final version of your program is supposed to work from the command line and 
 python credit_calc.py --principal=1000000 --periods=60 --interest=10 Incorrect parameters    --payment, that is a monthly payment. For --type=diff the payment is different each month, so we can't calculate periods or principal,    therefore, its combination with --payment is invalid, too:
   python credit_calc.py --type=diff --principal=1000000 --interest=10 --payment=100000 Incorrect parameters    --principal is used for calculations of both types of payment. You can get its value knowing the interest, annuity payment and periods.    --periods parax
 
-## 5. The Fifth project: Rock-Paper-Scissors
+## 5. Rock-Paper-Scissors
 
 **Description**
 
@@ -126,7 +127,7 @@ Of course, this is not the most efficient way to determine which option prevails
 14.  Play the game again (with the same options that were defined before the start of the game)
 
 
-## 6. The Sixth project: Hangman
+## 6. Hangman
 
 **About**
 
@@ -167,7 +168,7 @@ Improve the game by handling different error cases. Repeating a letter, entering
 
 While a dinner starts with the menu, our project ends with one. Create a menu for your game so that players can replay it or exit.
 
-## 7. The Seventh project: Tic-Tac-Toe
+## 7. Tic-Tac-Toe
 
 ##### About
 
@@ -205,7 +206,7 @@ In this stage, you should write a program that:
 
 You need to output the final result after the end of the game.
 
-## 8. The Eight project: Dominoes
+## 8. Dominoes
 
 ##### About
 Have you ever wanted to code a game where the computer is your enemy? Well, this little project allows you to do just that.
@@ -216,7 +217,7 @@ Learn, how artificial intelligence can make use of simple statistics to make edu
 This project is all about basic concepts. You'll work with strings, tuples, lists, conditional statements, and more.
  
 
- ## 9. The Ninth project: Currency Converter
+ ## 9. Currency Converter
 
 ##### About
 Want to convert one currency to another? You can go to your bank website and do the math by yourself. Or you can write a program to do it quickly and efficiently! The Currency Converter is a simple console program that calculates the amount of money you get by converting one currency to another.
@@ -232,7 +233,8 @@ You will learn many concepts of Python — basic types, variables, arithmetic op
 **Stage 5/6 Print the actual exchange rates for USD and EUR using a 3rd party service.**
 **Stage 6/6 Pick two currencies and find their actual exchange rates. Learn how to use cache to store the information about hundreds of currencies.**
  
-  ## 10. The Tenth Project: Arithmetic Exam Application
+ 
+ ## 10. Arithmetic Exam Application
 
 ##### About
 Many people are fond of interactive learning. In this project, you will learn how to write an application that can facilitate solving arithmetic operations in a quick manner. The application will generate a mathematical expression for a user to solve. Implement various levels of difficulty and let the application save the results and show the progress of learning.
@@ -245,3 +247,19 @@ Learn how to handle input and output, employ the random number generator, and wr
  **Stage 2/6 Use the random number generator to make your tasks random.**
 **Stage 3/6 Test with one question is boring, let's add more questions! Also, we need to find a way to handle user typos..**
 **Stage 4/6 Solving mathematical expressions is helpful, but many students prefer to get marks. Let's add marks and save the results!.**
+ 
+ 
+ ## 11. Generating Randomnes
+#### About
+Everyone knows that people are bad at generating random things. In this project, we will check this assumption using a small program that will predict "random" user actions. We'll see if you can beat it!
+ 
+#### Learning outcomes
+In addition to raising the metaphysical question of free will, this project will teach you to work with dictionaries and lists, as well as with simple predictive models.
+ 
+ **What you’ll do and what you’ll learn**
+ **Stage 1/4 Teach your program to remember user input and filter out inappropriate symbols..**
+ **Stage 2/4 Write a module that will form a “user profile” based on the data collected in the previous stage.**
+**Stage 3/4 Create a predictor that will guess the user's next input based on their previous keypresses. We will also validate the performance of this predictor.**
+**Stage 4/4 Now we are ready to try to beat our own system in pressing random keys. Try to be as unpredictable as you can!**
+ 
+ 
