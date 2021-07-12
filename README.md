@@ -258,11 +258,11 @@ Everyone knows that people are bad at generating random things. In this project,
 #### Learning outcomes
 In addition to raising the metaphysical question of free will, this project will teach you to work with dictionaries and lists, as well as with simple predictive models.
  
- **What you’ll do and what you’ll learn**
- **Stage 1/4 Teach your program to remember user input and filter out inappropriate symbols..**
- **Stage 2/4 Write a module that will form a “user profile” based on the data collected in the previous stage.**
-**Stage 3/4 Create a predictor that will guess the user's next input based on their previous keypresses. We will also validate the performance of this predictor.**
-**Stage 4/4 Now we are ready to try to beat our own system in pressing random keys. Try to be as unpredictable as you can!**
+**What you’ll do and what you’ll learn**
+1. **Stage 1/4 Teach your program to remember user input and filter out inappropriate symbols..**
+2. **Stage 2/4 Write a module that will form a “user profile” based on the data collected in the previous stage.**
+3. **Stage 3/4 Create a predictor that will guess the user's next input based on their previous keypresses. We will also validate the performance of this predictor.**
+4. **Stage 4/4 Now we are ready to try to beat our own system in pressing random keys. Try to be as unpredictable as you can!**
  
  
  ## 12. The Simple Banking System
