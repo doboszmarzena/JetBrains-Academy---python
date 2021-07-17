@@ -1,0 +1,45 @@
+import random
+class User:
+    def __init__(self):
+        self.user = None
+        self.name = None
+        self.zero = None
+        self.list = []
+
+
+    def menu(self):
+        print("Enter the number of friends joining (including you): ")
+        self.user = int(input())
+        if  self.user <= 0:
+            print("No one is joining for the party")
+        else:
+            print("Enter the name of every friend (including you), each on a new line: ")
+            for i in range(self.user):
+                self.name = input()
+                self.list.append(self.name)
+                self.list_name = dict.fromkeys(self.list,self.zero)
+            print("Enter the total bill value: ")
+            self.money = int(input())
+            print('Do you want to use the "Who is lucky?" feature? Write Yes/No: ')
+            self.answer = input().lower()
+            if self.answer == "yes":
+                self.lucky = random.choice(list(self.list_name.keys()))
+                print(f"{self.lucky} is the lucky one!")
+                del self.list_name[self.lucky]
+                self.bill = round((self.money / len(self.list_name)), 2)
+                self.list_name = dict.fromkeys(self.list_name, self.bill)
+                self.list_name.update({self.lucky : 0})
+                print(self.list_name)
+
+            elif self.answer == "no":
+                print("No one is going to be lucky")
+                self.bill = round((self.money / len(self.list_name)), 2)
+                self.name_list = dict.fromkeys(self.list_name, self.bill)
+                print(self.name_list)
+
+
+
+
+user = User()
+user.menu()
+
