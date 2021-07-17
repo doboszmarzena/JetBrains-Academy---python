@@ -13,6 +13,7 @@
  10. **Arithmetic Exam Application**
  11. **Generating Randomnes**
  12. **The Simple Banking System**
+ 13. **Bill Splitter**
 
 
 ## 1. Zookeeper
@@ -292,4 +293,24 @@ Do transfer item should allow transferring money to another account. You should 
 
 Do not forget to commit your DB changes right after executing a query!
  
+ 
+ 
+## 13. Bill Splitter
+ #### About 
+**Description**
+It's the right time to update your dictionary with new split values to make our "Who is lucky?" feature better. First, we need to recalculate the split value for everyone. Make sure that our lucky one pays 0.
+
+Recalculate the split value for n-1 people where n is the total length of the dictionary and update the values in the dictionary with the new split value for everyone.
+
+If a user decides not to use the "Who is lucky" feature, print the original dictionary.
+
+**Objectives**
+In this stage your program should perform the following steps together with the steps from the previous stages:
+
+1. In case of an invalid number of people, "No one is joining for the party" is expected as an output;
+2. Otherwise, if the user choice is Yes, re-split the bill according to the feature;
+3. Round up the split value to two decimal places;
+4. Update the dictionary with new split values and 0 for the lucky person;
+5. Print the updated dictionary;
+6. If the user entered anything else instead of Yes, print the original dictionary
  
