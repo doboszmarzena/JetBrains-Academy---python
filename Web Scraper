@@ -1,0 +1,41 @@
+import requests
+import os
+from bs4 import BeautifulSoup
+
+def save_articles_on_page(type_article, name, url_article):
+    if not os.path.exists(name):
+        os.mkdir(name)
+    r = requests.get(url_article)
+    soup = BeautifulSoup(r.content, "html.parser")
+    articles = soup.find_all("article")
+    article: object
+    for article in articles:
+        article_type = article.find('span', "c-meta__type").text
+        if article_type == type_article:
+            url_article = article.find('a').get('href')
+            article_web = requests.get("https://www.nature.com" + url_article)
+            soup_article = BeautifulSoup(article_web.content, "html.parser")
+            title_article = soup_article.title.text
+            punct = "!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+            name_file = ''
+            for char in title_article:
+                if char not in punct:
+                    name_file = name_file  + char
+            name_file  = name_file .replace("Research Highlights", "")
+            name_file = name_file .replace(" ", "_")
+            files_name = name_file .rstrip(name_file[-1])
+            files_name = files_name + ".txt"
+            body_article = soup_article.find('div', class_='article-item__body')
+            text_article = body_article.text.strip()
+            file = open(name + '\\' + files_name, "w", encoding="UTF-8")
+            file.write(text_article)
+            file.close()
+
+number_page_article = int(input())
+articles_type = input()
+for n in range(number_page_article):
+    name = f'Page_{n+1}'
+    url_article = f'https://www.nature.com/nature/articles?searchType=journalSearch&sort=PubDate&Page={n+1}'
+    save_articles_on_page(articles_type, name, url_article)
+print("Saved all articles.")
+
