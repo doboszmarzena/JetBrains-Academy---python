@@ -14,6 +14,7 @@
  11. **Generating Randomnes**
  12. **The Simple Banking System**
  13. **Bill Splitter**
+ 14. **Web Scraper**
 
 
 ## 1. Zookeeper
@@ -313,4 +314,18 @@ In this stage your program should perform the following steps together with the 
 4. Update the dictionary with new split values and 0 for the lucky person;
 5. Print the updated dictionary;
 6. If the user entered anything else instead of Yes, print the original dictionary
+ 
+ 
+ ## 14. Web Scraper
+#### About
+You will create a function that takes a website address and a number of webpages as input arguments and then goes all over the website saving every news article on the page to a separate .txt file on your computer.
+
+ **Learning outcomes**
+After finishing the project, you’ll know how to send HTTP-requests and process the responses, how to work with an external library, library documentation, and how to use it for parsing the website data. You will also find out how to make your program save results to a file with the help of Python.
+ 
+**Objectives**
+Improve your code so that the function can take two parameters from the user input: the number of pages (an integer) and the type of articles (a string). The integer with the number of pages specifies the number of pages on which the program should look for the articles.
+Go back to the https://www.nature.com/nature/articles website and find out how to navigate between the pages with the requests module changing the URL.
+Create a directory named Page_N (where N is the page number corresponding to the number input by the user) for each page. Search and collect all articles page by page; filter all the articles by the article type and put all the articles that are found on the page with the matched type to the directory Page_N. Mind that when the user enters some number, for example, 4, the program should search all pages up to that number and the respective folders (Folder 1, Folder 2, Folder 3, Folder 4) should be created. Mind also that in articles of different types the content is contained in different tags.
+Save the articles to separate *.txt files. Keep the same processing of the titles for the filenames as in the previous stage. You can give users some feedback on completion, but it is not required.
  
