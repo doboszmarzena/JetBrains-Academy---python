@@ -15,6 +15,7 @@
  12. **The Simple Banking System**
  13. **Bill Splitter**
  14. **Web Scraper**
+ 15. **Data Analysis for Hospitals**
 
 
 ## 1. Zookeeper
@@ -329,4 +330,42 @@ After finishing the project, you’ll know how to send HTTP-requests and process
 2. Go back to the https://www.nature.com/nature/articles website and find out how to navigate between the pages with the requests module changing the URL.
 3. Create a directory named Page_N (where N is the page number corresponding to the number input by the user) for each page. Search and collect all articles page by page; filter all the articles by the article type and put all the articles that are found on the page with the matched type to the directory Page_N. Mind that when the user enters some number, for example, 4, the program should search all pages up to that number and the respective folders (Folder 1, Folder 2, Folder 3, Folder 4) should be created. Mind also that in articles of different types the content is contained in different tags.
 4. Save the articles to separate *.txt files. Keep the same processing of the titles for the filenames as in the previous stage. You can give users some feedback on completion, but it is not required.
+ 
+ 
+ ## 15. Data Analysis for Hospitals
+#### About
+ 
+**Description**
+Are you ready to catch sight of your data?
+
+Graphics are arguably the most accessible way to represent the data and its structure. Sometimes, it can help to find the main data patterns and deviations. We will use data visualization methods to conclude our dataset.
+
+In the last stage, you need to create data visualization to answer the following questions:
+
+What is the most common age of a patient among all hospitals? Plot a histogram and choose one of the following age ranges: 0 - 15, 15 - 35, 35 - 55, 55 - 70, or 70 - 80
+What is the most common diagnosis among patients in all hospitals? Create a pie chart
+Build a violin plot of height distribution by hospitals. Try to answer the questions. What is the main reason for the gap in values? Why there are two peaks, which correspond to the relatively small and big values? No special form is required to answer this question
+There is a comprehensive explanation of violin plots by Eryk Lewinson.
+Hint
+
+To answer the last question think about specializations of the hospitals in the dataset and the unit of measurement of height.
+Please note that the answers are independent of each other.
+
+At this stage, we recommend using pandas visualization tools. However, feel free to use seaborn, matplotlib or any other library.
+
+The tests to check graph content are very limited and we are sure that you can easily answer the questions without plotting any charts. Despite this, please be curious to answer them using graphs. It is a very valuable skill for a data scientist to plot and interpret the data.
+
+**Objectives**
+Steps 1-8 are the same as in the previous stage. The fifth stage requires completing the following steps:
+
+1. Read the CSV files with datasets
+2. Change the column names. The column names of the sports and prenatal tables must match the column names of the general table
+3. Merge the dataframes into one. Use the ignore_index=True parameter and the following order: general, prenatal, sports.
+4. Delete the Unnamed: 0 column
+5. Delete all the empty rows
+6. Correct all the gender column values to f and m respectively
+7. Replace the NaN values in the gender column of the prenatal hospital with f
+8. Replace the NaN values in the bmi, diagnosis, blood_test, ecg, ultrasound, mri, xray, children, months columns with zeros
+9. Answer questions 1-3. Output the answers in the specified format. The answers to the first two questions should be formatted as in the examples. No special form is required to answer the third question
+
  
