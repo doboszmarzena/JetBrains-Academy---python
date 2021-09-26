@@ -1,0 +1,54 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+pd.set_option('display.max_columns', 8)
+
+general = pd.read_csv('test/general.csv')
+
+
+prenatal = pd.read_csv('test/prenatal.csv')
+
+
+sports = pd.read_csv('test/sports.csv')
+
+prenatal = prenatal.rename(columns={"HOSPITAL": "hospital", "Sex": "gender",
+                                    })
+
+sports = sports.rename(columns={"Hospital": "hospital", "Male/female": "gender",
+                                    })
+
+pandas = pd.concat([general, prenatal, sports], ignore_index = True)
+pandas = pandas.drop('Unnamed: 0', axis=1)
+pandas = pandas.dropna(how='all')
+pandas = pandas.replace(['female', 'woman'], 'f')
+pandas = pandas.replace(['male', 'man'], 'm')
+pandas['gender'] = pandas['gender'].fillna('f')
+pandas['bmi'] = pandas['bmi'].fillna(0)
+pandas['diagnosis'] = pandas['diagnosis'].fillna(0)
+pandas['blood_test'] = pandas['blood_test'].fillna(0)
+pandas['ecg'] = pandas['ecg'].fillna(0)
+pandas['ultrasound'] = pandas['ultrasound'].fillna(0)
+pandas['mri'] = pandas['mri'].fillna(0)
+pandas['xray'] = pandas['xray'].fillna(0)
+pandas['children'] = pandas['children'].fillna(0)
+pandas['months'] = pandas['months'].fillna(0)
+
+def plot():
+    pandas.plot(y="age", kind="hist")
+    plt.show()
+    print("The answer to the 1st question: 15 - 35")
+
+    pandas['diagnosis'].value_counts().plot(kind='pie')
+    plt.show()
+    print('The answer to the 2nd question: pregnancy')
+
+
+    sns.violinplot(x="hospital", y="height", data=pandas)
+    plt.show()
+    print("The answer to the 3rd question: It's because values are too large")
+
+
+
+plot()
